@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrarMascota"
+    android:padding="20dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar Mascota"
+        android:textAlignment="center"
+        android:textSize="@dimen/Size_titulo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Datos de la Mascota"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etIdMascota"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="ingrese ID"/>
+
+        <Button
+            android:id="@+id/btnBusquedaMascota"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Buscar"/>
+
+        <Button
+            android:id="@+id/btnReiniciarMascota"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etBuscarNombreMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        />
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etBuscarTipoMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo"/>
+
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etBuscarRazaMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Raza"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etBuscarPesoMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Peso"
+        />
+
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etBuscarColorMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Color"/>
+
+
+    <Button
+        android:id="@+id/btEliminarRegistroMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar registro"
+        />
+    <Button
+        android:id="@+id/btnModificarRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modificar registro"
+        />
+
+</LinearLayout>

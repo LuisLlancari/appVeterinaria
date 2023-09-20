@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuscarCliente"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar Cliente"
+        android:textAlignment="center"
+        android:textSize="@dimen/Size_titulo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Datos del cliente"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etNombreCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        />
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etApellidoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellido"/>
+
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etTelefonoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefono"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etEmailCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        />
+
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etDireccionCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Direccion"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etFechaNacimientoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de nacimiento"/>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/btRegistrarCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar Cliente"
+        />
+
+    <Button
+        android:id="@+id/btAbrirBusquedaCli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Busqueda de Cliente"
+        />
+
+</LinearLayout>
