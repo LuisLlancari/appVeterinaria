@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".RegistrarMascota"
+    android:background="@color/c_background"
     android:padding="20dp"
     >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Registrar Mascota"
         android:textAlignment="center"
         android:textSize="@dimen/Size_titulo"/>
@@ -19,60 +21,70 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Datos de la Mascota"
         android:textSize="20dp"/>
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etNombreMascota"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etNombreMascota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Nombre"
         />
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etTipoMascota"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etTipoMascota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Tipo"/>
 
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etRazaMascota"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etRazaMascota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Raza"/>
 
     <EditText
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"
         android:id="@+id/etPesoMascota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Peso"
         />
 
 
     <EditText
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"
         android:id="@+id/etColorMascota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Color"/>
 
     <Button
         android:layout_marginTop="30dp"
         android:id="@+id/btRegistrarMascota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/boton_height"
+        android:backgroundTint="@color/c_boton"
         android:text="Registrar Mascota"
         />
 
     <Button
         android:id="@+id/btAbrirBusqueda"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/boton_height"
+        android:backgroundTint="@color/c_boton"
         android:text="Busqueda de mascota"
         />
 

@@ -17,7 +17,7 @@ public class BuscarMascota extends AppCompatActivity {
 
     ConexionSQLiteHelper conexion;
     EditText etBNombreMascota, etBTipoMascota, etBRazaMascota, etBPesoMascota, etBColorMascota, etIDMascota;
-    Button btBuscarMascota,btModificarMascota,btEliminarMascota,btReiniicarMascota;
+    Button btBuscarMascota,btModificarMascota,btEliminarMascota,btReinicarMascota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +48,17 @@ public class BuscarMascota extends AppCompatActivity {
                 preguntarEliminar();
             }
         });
+
+        btReinicarMascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reiniciarUI();
+            }
+        });
         
     }
+
+
     public void ValidarCampos(){
         String nombre, tipo, raza, color;
         int peso;
@@ -68,6 +77,7 @@ public class BuscarMascota extends AppCompatActivity {
         }
 
     }
+
 
     private void preguntarModificar(){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
@@ -91,6 +101,7 @@ public class BuscarMascota extends AppCompatActivity {
         dialogo.show();
 
     }
+
 
     private void preguntarEliminar(){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
@@ -116,7 +127,6 @@ public class BuscarMascota extends AppCompatActivity {
     }
 
 
-
     private void ActualizarMascota(){
 
         SQLiteDatabase db = conexion.getWritableDatabase();
@@ -130,18 +140,26 @@ public class BuscarMascota extends AppCompatActivity {
         parametros.put("color",etBColorMascota.getText().toString());
 
 
-        long idobtenido = db.update("mascota", parametros,"idmascota=?",campoCriterio);
-        reiniciarUI();
+        int mascotaactualizada = db.update("mascota", parametros,"idmascota=?",campoCriterio);
+        if(mascotaactualizada > 0){
+            notificar("Datos Actualizados con éxito");
+            reiniciarUI();
+        }
+        else{notificar("Error al Actualizar datos");}
     }
+
 
     private void EliminarMascota(){
         SQLiteDatabase db = conexion.getWritableDatabase();
         String[] campoCriterio = {etIDMascota.getText().toString()};
 
-        long idobtenido = db.delete("mascota","idmascota=?",campoCriterio);
-        reiniciarUI();
+        int mascotaeliminada = db.delete("mascota","idmascota=?",campoCriterio);
+        if(mascotaeliminada > 0){
+            notificar("Datos Eliminados con éxito");
+            reiniciarUI();
+        }
+        else{notificar("Error al Eliminar datos");}
     }
-
 
 
     private void reiniciarUI(){
@@ -152,7 +170,6 @@ public class BuscarMascota extends AppCompatActivity {
         etBPesoMascota.setText(null);
         etBColorMascota.setText(null);
     }
-
 
 
     private void buscarMascota(){
@@ -195,6 +212,7 @@ public class BuscarMascota extends AppCompatActivity {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
     }
 
+
     private void LoadUI() {
 
         etBNombreMascota = findViewById(R.id.etBuscarNombreMascota);
@@ -207,8 +225,9 @@ public class BuscarMascota extends AppCompatActivity {
         btBuscarMascota = findViewById(R.id.btnBusquedaMascota);
         btModificarMascota= findViewById(R.id.btnModificarRegistroMascota);
         btEliminarMascota = findViewById(R.id.btEliminarRegistroMascota);
-
-
+        btReinicarMascota = findViewById(R.id.btnReiniciarMascota);
 
     }
+
+
 }

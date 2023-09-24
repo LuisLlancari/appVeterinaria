@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarCliente"
     android:orientation="vertical"
+    android:background="@color/c_background"
     android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Registrar Cliente"
         android:textAlignment="center"
         android:textSize="@dimen/Size_titulo"/>
@@ -18,71 +20,81 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Datos del cliente"
         android:textSize="20dp"/>
 
 
 
     <EditText
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"
         android:id="@+id/etNombreCliente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Nombre"
         />
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etApellidoCliente"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etApellidoCliente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Apellido"/>
 
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etTelefonoCliente"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etTelefonoCliente"
         android:layout_width="match_parent"
         android:inputType="number"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Telefono"/>
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etEmailCliente"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etEmailCliente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Email"
         />
 
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etDireccionCliente"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etDireccionCliente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
         android:hint="Direccion"/>
 
     <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/etFechaNacimientoCliente"
+        android:layout_marginTop="@dimen/margintop_formulario"
+        android:paddingStart="@dimen/paddinstar_formulario"        android:id="@+id/etFechaNacimientoCliente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="date"
+        android:layout_height="@dimen/height_formulario"
+        android:background="@drawable/formulario_fondo"
+
         android:hint="Fecha de nacimiento"/>
 
     <Button
         android:layout_marginTop="30dp"
         android:id="@+id/btRegistrarCliente"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/boton_height"
+        android:backgroundTint="@color/c_boton"
         android:text="Registrar Cliente"
         />
 
     <Button
         android:id="@+id/btAbrirBusquedaCli"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/boton_height"
+        android:backgroundTint="@color/c_boton"
         android:text="Busqueda de Cliente"
         />
 
