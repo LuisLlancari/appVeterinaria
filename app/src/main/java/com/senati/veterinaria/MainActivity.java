@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnAbrirMascota;
+    Button btnAbrirMascota, btnAbrirCliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +21,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),RegistrarMascota.class));
             }
         });
+
+        btnAbrirCliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), RegistrarCliente.class));
+            }
+        });
+
     }
 
     private void loadUI(){
         btnAbrirMascota = findViewById(R.id.btAbriMascota);
+        btnAbrirCliente = findViewById(R.id.btAbriCliente);
     }
 }

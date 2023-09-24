@@ -7,10 +7,11 @@
     tools:context=".RegistrarCliente"
     android:orientation="vertical"
     android:padding="20dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar Cliente"
+        android:text="Registrar Cliente"
         android:textAlignment="center"
         android:textSize="@dimen/Size_titulo"/>
 
@@ -20,41 +21,11 @@
         android:text="Datos del cliente"
         android:textSize="20dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/etBuscaridCliente"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:hint="ingrese ID"/>
-
-        <Button
-            android:id="@+id/btnBuscarCliente"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Buscar"/>
-
-        <Button
-            android:id="@+id/btnReiniciarCliente"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Reiniciar"/>
-
-
-
-
-    </LinearLayout>
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/etBuscarNombreCliente"
+        android:id="@+id/etNombreCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
@@ -62,7 +33,7 @@
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/etBuscarApellidoCliente"
+        android:id="@+id/etApellidoCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Apellido"/>
@@ -70,14 +41,15 @@
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/etBuscarTelefonoCliente"
+        android:id="@+id/etTelefonoCliente"
         android:layout_width="match_parent"
+        android:inputType="number"
         android:layout_height="wrap_content"
         android:hint="Telefono"/>
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/etBuscarEmailCliente"
+        android:id="@+id/etEmailCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
@@ -86,32 +58,32 @@
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/etBuscarDireccionCliente"
+        android:id="@+id/etDireccionCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Direccion"/>
 
     <EditText
         android:layout_marginTop="15dp"
-        android:id="@+id/etBuscarFechaNacimientoCliente"
+        android:id="@+id/etFechaNacimientoCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Fecha de nacimiento"/>
 
     <Button
         android:layout_marginTop="30dp"
-        android:id="@+id/btEliminarRegistroCliente"
+        android:id="@+id/btRegistrarCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Editar Cliente"
+        android:text="Registrar Cliente"
         />
 
     <Button
-        android:id="@+id/btEditarRegistroCliente"
+        android:id="@+id/btAbrirBusquedaCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Busqueda de Cliente"
         />
-
 
 </LinearLayout>

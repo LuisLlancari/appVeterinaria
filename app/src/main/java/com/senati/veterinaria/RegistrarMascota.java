@@ -55,8 +55,8 @@ public class RegistrarMascota extends AppCompatActivity {
         }else {
             preguntar();
         }
-
     }
+
     private void preguntar(){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         dialogo.setTitle("Veterinaria");

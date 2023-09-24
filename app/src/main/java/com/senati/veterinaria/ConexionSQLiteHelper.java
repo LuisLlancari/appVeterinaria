@@ -19,6 +19,18 @@ public class ConexionSQLiteHelper  extends SQLiteOpenHelper {
             "PRIMARY KEY ('idmascota' AUTOINCREMENT)"+
             ")";
 
+    final String CLIENTE =  "" +
+            "CREATE TABLE 'cliente'("+
+            "'idcliente'    INTEGER   NOT NULL,"+
+            "'nombre'       TEXT      NOT NULL,"+
+            "'apellido'     TEXT      NOT NULL,"+
+            "'telefono'     INTEGER   NOT NULL,"+
+            "'email'        TEXT      NOT NULL,"+
+            "'direccion'    TEXT      NOT NULL,"+
+            "'fechanacimiento'    TEXT     NOT NULL,"+
+            "PRIMARY KEY ('idcliente' AUTOINCREMENT)"+
+            ")";
+
 
 
     public ConexionSQLiteHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory,int version){
@@ -28,11 +40,13 @@ public class ConexionSQLiteHelper  extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(MASCOTA);
+        sqLiteDatabase.execSQL(CLIENTE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS mascota");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS cliente");
         onCreate(sqLiteDatabase);
     }
 }
