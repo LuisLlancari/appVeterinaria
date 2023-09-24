@@ -2,6 +2,9 @@ package com.senati.veterinaria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -14,7 +17,7 @@ public class BuscarMascota extends AppCompatActivity {
 
     ConexionSQLiteHelper conexion;
     EditText etBNombreMascota, etBTipoMascota, etBRazaMascota, etBPesoMascota, etBColorMascota, etIDMascota;
-    Button btBuscarMascota;
+    Button btBuscarMascota,btModificarMascota,btEliminarMascota,btReiniicarMascota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,123 @@ public class BuscarMascota extends AppCompatActivity {
                 buscarMascota();
             }
         });
+
+        btModificarMascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { ValidarCampos();
+
+            }
+        });
+
+        btEliminarMascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                preguntarEliminar();
+            }
+        });
         
+    }
+    public void ValidarCampos(){
+        String nombre, tipo, raza, color;
+        int peso;
+        nombre = etBNombreMascota.getText().toString();
+        tipo = etBTipoMascota.getText().toString();
+        raza = etBRazaMascota.getText().toString();
+        color = etBColorMascota.getText().toString();
+
+        peso =(etBPesoMascota.getText().toString().trim().isEmpty()) ? 0 : Integer.parseInt(etBPesoMascota.getText().toString());
+        //peso = etPesoMascota.getText().toString();
+
+        if(nombre.isEmpty() || tipo.isEmpty() || raza.isEmpty() || color.isEmpty() || peso == 0){
+            notificar("completa formulario");
+        }else {
+            preguntarModificar();
+        }
+
+    }
+
+    private void preguntarModificar(){
+        AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
+        dialogo.setTitle("Veterinaria");
+        dialogo.setMessage("¿Esta seguro de modificar esta Mascota?");
+        dialogo.setCancelable(false);
+
+        dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ActualizarMascota();
+            }
+        });
+
+        dialogo.setNegativeButton("canelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        dialogo.show();
+
+    }
+
+    private void preguntarEliminar(){
+        AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
+        dialogo.setTitle("Veterinaria");
+        dialogo.setMessage("¿Esta seguro de eliminar esta mascota?");
+        dialogo.setCancelable(false);
+
+        dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                EliminarMascota();
+            }
+        });
+
+        dialogo.setNegativeButton("canelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        dialogo.show();
+
+    }
+
+
+
+    private void ActualizarMascota(){
+
+        SQLiteDatabase db = conexion.getWritableDatabase();
+        String[] campoCriterio = {etIDMascota.getText().toString()};
+        ContentValues parametros = new ContentValues();
+
+        parametros.put("nombre",etBNombreMascota.getText().toString());
+        parametros.put("tipo",etBTipoMascota.getText().toString());
+        parametros.put("raza",etBRazaMascota.getText().toString());
+        parametros.put("peso",etBPesoMascota.getText().toString());
+        parametros.put("color",etBColorMascota.getText().toString());
+
+
+        long idobtenido = db.update("mascota", parametros,"idmascota=?",campoCriterio);
+        reiniciarUI();
+    }
+
+    private void EliminarMascota(){
+        SQLiteDatabase db = conexion.getWritableDatabase();
+        String[] campoCriterio = {etIDMascota.getText().toString()};
+
+        long idobtenido = db.delete("mascota","idmascota=?",campoCriterio);
+        reiniciarUI();
+    }
+
+
+
+    private void reiniciarUI(){
+        etIDMascota.setText(null);
+        etBNombreMascota.setText(null);
+        etBTipoMascota.setText(null);
+        etBRazaMascota.setText(null);
+        etBPesoMascota.setText(null);
+        etBColorMascota.setText(null);
     }
 
 
@@ -72,6 +191,10 @@ public class BuscarMascota extends AppCompatActivity {
     }
 
 
+    private void notificar(String mensaje){
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
+    }
+
     private void LoadUI() {
 
         etBNombreMascota = findViewById(R.id.etBuscarNombreMascota);
@@ -82,6 +205,8 @@ public class BuscarMascota extends AppCompatActivity {
         etIDMascota = findViewById(R.id.etIdMascota);
 
         btBuscarMascota = findViewById(R.id.btnBusquedaMascota);
+        btModificarMascota= findViewById(R.id.btnModificarRegistroMascota);
+        btEliminarMascota = findViewById(R.id.btEliminarRegistroMascota);
 
 
 

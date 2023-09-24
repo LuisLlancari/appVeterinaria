@@ -103,7 +103,7 @@
         android:text="Eliminar registro"
         />
     <Button
-        android:id="@+id/btnModificarRegistro"
+        android:id="@+id/btnModificarRegistroMascota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Modificar registro"
