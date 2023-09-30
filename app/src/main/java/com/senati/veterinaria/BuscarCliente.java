@@ -39,14 +39,14 @@ public class BuscarCliente extends AppCompatActivity {
         btEliminarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                preguntarEliminar();
+                ValidarEliminar();
             }
         });
 
         btModificarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                preguntarModificar();
+                ValidarCampos();
             }
         });
         btReiniciarCliente.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,38 @@ public class BuscarCliente extends AppCompatActivity {
                 reiniciarUI();
             }
         });
+
+    }
+    public void ValidarCampos(){
+        String nombre, apellido, email, direccion, fechanacimiento,idclientestr;
+        int telefono, idcliente;
+        nombre = etNombre.getText().toString();
+        apellido = etApellido.getText().toString();
+        email = etEmail.getText().toString();
+        direccion = etDireccion.getText().toString();
+        fechanacimiento = etFechaNacimiento.getText().toString();
+        idcliente =Integer.parseInt(etIDcliente.getText().toString());
+        idclientestr = String.valueOf(idcliente);
+
+        telefono =(etTelefono.getText().toString().trim().isEmpty()) ? 0 : Integer.parseInt(etTelefono.getText().toString());
+
+
+        if(nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || direccion.isEmpty() || fechanacimiento.isEmpty() || telefono == 0 || idcliente == 0 || idclientestr.isEmpty()){
+            notificar("completa formulario Correctamente");
+        }else {
+            preguntarModificar();
+        }
+    }
+
+    public void ValidarEliminar(){
+        String idclientestr;
+        int idcliente;
+        idcliente =Integer.parseInt(etIDcliente.getText().toString());
+        idclientestr = etIDcliente.getText().toString();
+
+        if(idclientestr.isEmpty() || idcliente == 0 ){
+            notificar("Colocar un ID valido");
+        }else { preguntarEliminar();}
 
     }
 

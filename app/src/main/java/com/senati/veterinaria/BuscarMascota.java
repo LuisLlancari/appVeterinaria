@@ -45,7 +45,7 @@ public class BuscarMascota extends AppCompatActivity {
         btEliminarMascota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                preguntarEliminar();
+                ValidarEliminar();
             }
         });
 
@@ -60,24 +60,37 @@ public class BuscarMascota extends AppCompatActivity {
 
 
     public void ValidarCampos(){
-        String nombre, tipo, raza, color;
-        int peso;
+        String nombre, tipo, raza, color, idmascotastr;
+        int peso,idmascota;
         nombre = etBNombreMascota.getText().toString();
         tipo = etBTipoMascota.getText().toString();
         raza = etBRazaMascota.getText().toString();
         color = etBColorMascota.getText().toString();
+        idmascota = Integer.parseInt(etIDMascota.getText().toString());
+        idmascotastr = String.valueOf(idmascota);
 
         peso =(etBPesoMascota.getText().toString().trim().isEmpty()) ? 0 : Integer.parseInt(etBPesoMascota.getText().toString());
         //peso = etPesoMascota.getText().toString();
 
-        if(nombre.isEmpty() || tipo.isEmpty() || raza.isEmpty() || color.isEmpty() || peso == 0){
-            notificar("completa formulario");
+        if(nombre.isEmpty() || tipo.isEmpty() || raza.isEmpty() || color.isEmpty() || peso == 0 || idmascota == 0 || idmascotastr.isEmpty() ){
+            notificar("completa formulario correctamente");
         }else {
             preguntarModificar();
         }
 
     }
 
+    public void ValidarEliminar(){
+        String idmascotastr;
+        int idmascota;
+        idmascota =Integer.parseInt(etIDMascota.getText().toString());
+        idmascotastr = etIDMascota.getText().toString();
+
+        if(idmascotastr.isEmpty() || idmascota == 0 ){
+            notificar("Colocar un ID valido");
+        }else { preguntarEliminar();}
+
+    }
 
     private void preguntarModificar(){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
