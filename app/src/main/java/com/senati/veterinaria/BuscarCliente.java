@@ -134,7 +134,7 @@ public class BuscarCliente extends AppCompatActivity {
 
         }
         catch (Exception e){
-            Toast.makeText(this,"Error consulta", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Datos no encontrados", Toast.LENGTH_LONG).show();
         }
 
     }

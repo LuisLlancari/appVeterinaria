@@ -88,4 +88,12 @@
         android:text="Busqueda de mascota"
         />
 
+    <Button
+        android:id="@+id/btAbrirListarMascota"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/boton_height"
+        android:backgroundTint="@color/c_boton"
+        android:text="Listar Mascota"
+        />
+
 </LinearLayout>

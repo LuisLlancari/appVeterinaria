@@ -97,5 +97,13 @@
         android:backgroundTint="@color/c_boton"
         android:text="Busqueda de Cliente"
         />
+    <Button
+        android:id="@+id/btAbrirListarCLiente"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/boton_height"
+        android:backgroundTint="@color/c_boton"
+        android:text="Listar de Cliente"
+        />
+
 
 </LinearLayout>

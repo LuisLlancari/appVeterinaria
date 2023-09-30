@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class RegistrarMascota extends AppCompatActivity {
     EditText etNombreMascota, etTipoMascota, etRazaMascota, etPesoMascota, etColorMascota;
-    Button   btRegistrarMascota, btAbrirBusqueda;
+    Button   btRegistrarMascota, btAbrirBusqueda, btnAbrirListar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,13 @@ public class RegistrarMascota extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),BuscarMascota.class));
+            }
+        });
+
+        btnAbrirListar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ListarMascota.class));
             }
         });
 
@@ -122,6 +129,7 @@ public class RegistrarMascota extends AppCompatActivity {
 
         btRegistrarMascota = findViewById(R.id.btRegistrarMascota);
         btAbrirBusqueda = findViewById(R.id.btAbrirBusqueda);
+        btnAbrirListar = findViewById(R.id.btAbrirListarMascota);
 
 
     }

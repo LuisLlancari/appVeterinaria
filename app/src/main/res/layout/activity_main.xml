@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Veterinaria"
+        android:text="Veterinaria 'PAW'"
         android:textColor="@color/white"
         android:textSize="45dp"
         android:textAlignment="center"
@@ -21,17 +21,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/marca"
+        app:tint="@color/white" />
     <Button
+        android:layout_marginTop="40dp"
         android:id="@+id/btAbriCliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="84dp"
+        android:textSize="30dp"
         android:backgroundTint="@color/c_boton"
         android:text="Cliente" />
+
     <Button
         android:id="@+id/btAbriMascota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mascota"
-        android:backgroundTint="@color/c_boton"/>
+        android:layout_width="202dp"
+        android:layout_height="89dp"
+        android:textSize="30dp"
+        android:backgroundTint="@color/c_boton"
+        android:text="Mascota" />
 
 </LinearLayout>

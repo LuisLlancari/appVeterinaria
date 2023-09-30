@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class RegistrarCliente extends AppCompatActivity {
 
     EditText etNombre, etApellido, etTelefono, etEmail, etDireccion, etFechaNacimiento;
-    Button btAbrirBusqueda,btRegistrarCliente;
+    Button btAbrirBusqueda,btRegistrarCliente, btListarCliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,13 @@ public class RegistrarCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ValidarCampos();
+            }
+        });
+
+        btListarCliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListarCliente.class));
             }
         });
     }
@@ -124,6 +131,8 @@ public class RegistrarCliente extends AppCompatActivity {
 
         btAbrirBusqueda = findViewById(R.id.btAbrirBusquedaCli);
         btRegistrarCliente = findViewById(R.id.btRegistrarCliente);
+        btListarCliente = findViewById(R.id.btAbrirListarCLiente);
+
 
     }
 
